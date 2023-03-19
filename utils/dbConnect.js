@@ -16,7 +16,4 @@ const dbConnect = () => {
         });
 };
 
-// rojnamcha
-// 6J9fYZ69CwluFqSd
-
 module.exports = dbConnect;
