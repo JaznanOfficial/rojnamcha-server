@@ -13,6 +13,16 @@ const usersSchema = mongoose.Schema(
             unique: [true, "Email must be unique"],
             validate: [validator.isEmail, "Please provide a valid email"],
         },
+        school: {
+            type: String,
+            // required: [true, "School/collage is required"],
+            
+        },
+        address: {
+            type: String,
+            // required: [true, "Address is required"],
+          
+        },
         img: {
             type: String,
             validate: [validator.isURL, "Please provide an URL"],

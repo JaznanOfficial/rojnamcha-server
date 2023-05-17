@@ -14,13 +14,14 @@ const getUsersController = async (req, res) => {
         // console.log(users);
         if (users.length === 0) {
             return res.status(200).json({
-                message: "You've no data or entered a wrong queries. please insert first then find data or check your queries",
+                message:
+                    "You've no data or entered a wrong queries. please insert first then find data or check your queries",
             });
         }
         return res.status(200).json(users);
     } catch (error) {
         res.json(error.message);
-        console.log(error.message)
+        console.log(error.message);
     }
 };
 const postUsersController = async (req, res) => {
@@ -35,8 +36,7 @@ const postUsersController = async (req, res) => {
         });
     } catch (error) {
         res.json(error);
-        console.log(error.message)
-
+        console.log(error.message);
     }
 };
 
@@ -51,9 +51,7 @@ const deleteUsersController = async (req, res) => {
                 status: "Failed",
                 message: "We didn't find any user to delete.",
             });
-        }
-        else if (users.acknowledged && users.deletedCount) {
-            
+        } else if (users.acknowledged && users.deletedCount) {
             return res.status(200).json({
                 status: "Successful",
                 message: "Data deleted successfully",
@@ -71,7 +69,7 @@ const updateUsersController = async (req, res) => {
     try {
         const query = req.query;
         const data = req.body;
-        // console.log(query);
+        console.log(query);
         const users = await updateUsersService(query, data);
         console.log(users);
         if (users.acknowledged && !users.matchedCount) {
@@ -79,9 +77,7 @@ const updateUsersController = async (req, res) => {
                 status: "Failed",
                 message: "We didn't find any user to update.",
             });
-        }
-        else if (users.matchedCount && users.modifiedCount) {
-            
+        } else if (users.matchedCount && users.modifiedCount) {
             return res.status(200).json({
                 status: "Successful",
                 message: "Data update successfully",

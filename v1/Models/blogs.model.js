@@ -8,12 +8,12 @@ const blogsSchema = mongoose.Schema(
             type: String,
             required: [true, "Name is required"],
         },
-        // img: {
-        //     type: String,
-        //     required: [true, "trailer_video is required"],
-        //     // unique: [true, "Email must be unique"],
-        //     validate: [validator.isURL, "Please provide an URL"],
-        // },
+        img: {
+            type: String,
+            required: [true, "image link is required"],
+            // unique: [true, "Email must be unique"],
+            validate: [validator.isURL, "Please provide an URL"],
+        },
         post: {
             required: true,
             type: String,
