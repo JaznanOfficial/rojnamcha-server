@@ -94,7 +94,7 @@ const likePostController = async (req, res) => {
     try {
         const { id } = req.params;
         const {email} = req.body
-        console.log(email)
+        // console.log(req.body)
         const updatedPost = await likePostService(id,email);
         res.status(200).json(updatedPost);
     } catch (error) {

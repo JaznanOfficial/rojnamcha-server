@@ -2,7 +2,7 @@ const Blogs = require("../Models/blogs.model");
 
 const getBlogsService = async (query) => {
     const result = await Blogs.find(query);
-    console.log(result);
+    // console.log(result);
     return result;
 };
 
