@@ -13,12 +13,7 @@ const getBlogsController = async (req, res) => {
         const query = req.query;
         const blogs = await getBlogsService(query);
         console.log(blogs);
-        if (blogs.length === 0) {
-            return res.status(200).json({
-                message:
-                    "You have no data or entered wrong queries. Please insert data first or check your queries.",
-            });
-        }
+        
         return res.status(200).json(blogs);
     } catch (error) {
         res.json(error.message);
